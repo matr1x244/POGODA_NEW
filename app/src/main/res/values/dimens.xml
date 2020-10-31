@@ -1,0 +1,15 @@
+<resources>
+
+    <!-- margins -->
+    <dimen name="fab_margin">16dp</dimen>
+    <!-- margins -->
+
+
+    <!-- Text sizes -->
+    <dimen name="sizetext_name">24sp</dimen>
+    <dimen name="sizetext_speed_weather">20sp</dimen>
+    <dimen name="sizetext_pressure">20sp</dimen>
+    <dimen name="sizetext_city_weather">20sp</dimen>
+    <!-- Text sizes -->
+
+</resources>

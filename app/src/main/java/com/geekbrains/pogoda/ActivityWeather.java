@@ -30,7 +30,7 @@ public class ActivityWeather extends AppCompatActivity  implements View.OnClickL
     }
 
     //Кнопка назад
-    public void buttonBack(View view) {
+        public void buttonBack(View view) {
         Toast.makeText(ActivityWeather.this, "Назад", Toast.LENGTH_SHORT).show();
         if (DEBAG) {
             Log.d(TAG, "buttonBack");

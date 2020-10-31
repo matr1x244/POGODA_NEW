@@ -1,8 +1,10 @@
 package com.geekbrains.pogoda;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,8 +22,6 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
     private static final String TAG = "MainActivity"; // TAG для логов
     private final static boolean DEBAG = true; //включение DEBAGa для логов.
 
-    //startActivity(new Intent(this, ActivityWeather.class)); - это не понял с урока
-
     String[] cities = {"Москва", "Йошкар-Ола", "Вологда", "Волгоград", "Саратов", "Воронеж"};
     TextView selection;
 
@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
         setContentView(R.layout.activity_main); // запуск главного экрана
         Button buttonSearch = (Button)findViewById(R.id.buttonSearch);
         buttonSearch.setOnClickListener((View.OnClickListener) this);
+
+        //Log.i(TAG, "OnCreate");
 
         selection = (TextView) findViewById(R.id.selection);
 
@@ -64,7 +66,9 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
 
         // Получаем флажки
         CheckBox speed_weather = (CheckBox) findViewById(R.id.speed_weather);
+        Log.d(TAG, "speed_weather");
         CheckBox pressure = (CheckBox) findViewById(R.id.pressure);
+        Log.d(TAG, "pressure_weather");
 
         // пока что отоброжать текст -- потом удалить - пока для тестов
         String selectedItems = "";
@@ -75,6 +79,7 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
 
         // пока что отоброжать текст -- потом удалить - пока для тестов
         TextView selection = (TextView) findViewById(R.id.selection);
+        Log.d(TAG, "selection");
         selection.setText(selectedItems);
         //
     }
@@ -107,6 +112,49 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
         }
     }
 
+    // Log.d (TAG)
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG, "onStart");
+    }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(TAG, "onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "onDestroy");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(TAG, "onPause");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(TAG, "onResume");
+    }
+
+    @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        Log.d(TAG, "onConfigurationChanged");
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.d(TAG, "onSaveInstanceState");
+    }
+
+    // Log.d (TAG)
 }
