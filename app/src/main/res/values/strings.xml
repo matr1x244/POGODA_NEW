@@ -13,4 +13,6 @@
     <string name="text_city_p">Pressure</string>
     <string name="text_city_s">Speed weather</string>
     <string name="buttonBack">Back</string>
+
+
 </resources>
