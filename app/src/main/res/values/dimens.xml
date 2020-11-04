@@ -2,8 +2,8 @@
 
     <!-- margins -->
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="common_margin">20dp</dimen>
     <!-- margins -->
-
 
     <!-- Text sizes -->
     <dimen name="sizetext_name">24sp</dimen>

@@ -5,15 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ScrollView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,33 +22,27 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
 
     private static final String TAG = "MainActivity"; // TAG для логов
     private final static boolean DEBAG = true; //включение DEBAGa для логов.
+    private TextView selection;
 
-    String[] cities = {"Москва", "Йошкар-Ола", "Вологда", "Волгоград", "Саратов", "Воронеж"};
-    TextView selection;
+    //---------
+    EditText cityName;
+    Button buttonSearch;
+//---------
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main); // запуск главного экрана
-        Button buttonSearch = (Button)findViewById(R.id.buttonSearch);
+
+        EditText cityName = (EditText) findViewById(R.id.cityName);
+        Button buttonSearch = (Button) findViewById(R.id.buttonSearch);
         buttonSearch.setOnClickListener((View.OnClickListener) this);
 
-        //Log.i(TAG, "OnCreate");
-
         selection = (TextView) findViewById(R.id.selection);
-
-        Spinner spinner = (Spinner) findViewById(R.id.cities);
-        // Создаем адаптер ArrayAdapter с помощью массива строк и стандартной разметки элемета spinner
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, cities);
-        // Определяем разметку для использования при выборе элемента
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Применяем адаптер к элементу spinner
-        spinner.setAdapter(adapter);
 
         AdapterView.OnItemSelectedListener itemSelectedListener = new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
                 // Получаем выбранный объект
                 String item = (String) parent.getItemAtPosition(position);
                 selection.setText(item);
@@ -56,12 +50,9 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
             }
         };
-        spinner.setOnItemSelectedListener(itemSelectedListener);
     }
-
 
     public void onCheckboxClicked(View view) {
 
@@ -82,36 +73,30 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
         TextView selection = (TextView) findViewById(R.id.selection);
         Log.d(TAG, "selection");
         selection.setText(selectedItems);
-        //
+        // пока что отоброжать текст -- потом удалить - пока для тестов
     }
 
-//// УДАЛИТЬ
-    //Кнопка поиска
-    /* c урока удалить
-    private View.OnClickListener buttonSearch = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Toast.makeText(MainActivity.this, "Поиск", Toast.LENGTH_SHORT).show();
-            Log.d(TAG,"buttonSearch");
-        }
-    };
-     */
-//// УДАЛИТЬ
-
+    //-----
     @Override
-    public void onClick(View view) {
-        Intent Search;
-        Search = new Intent(this, ActivityWeather.class);
-        startActivity(Search);
-    }
-
-    //Кнопка поиска
-    public void buttonSearch(View view) {
-        Toast.makeText(MainActivity.this, "Поиск", Toast.LENGTH_SHORT).show();
-        if (DEBAG) {
-            Log.d(TAG, "buttonSearch");
+    public void onClick(View v) {
+        if (v.getId() == R.id.buttonSearch) {
+            Log.d(TAG, "buttonSearchSend");
+            Intent search = new Intent(this, ActivityWeather.class);
+            search.putExtra("Город..", cityName.getText().toString());
+            startActivity(search);
         }
     }
+    //-----
+
+        // С Урока №4
+        // запуск страницы в браузере
+        //Uri addres = Uri.parse("https://гибдд12.рф");
+        //Intent Web = new Intent(Intent.ACTION_VIEW, addres);
+        //startActivity(Web);
+        // запуск страницы в браузере
+        // С Урока №4
+    //}
+
 
     // Log.d (TAG)
 
@@ -158,4 +143,5 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
     }
 
     // Log.d (TAG)
+
 }

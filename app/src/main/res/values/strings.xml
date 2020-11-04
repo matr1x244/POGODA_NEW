@@ -8,7 +8,7 @@
     <string name="buttonSearch">Search</string>
 
     <!--ActivityWeather-->
-    <string name="text_city_w">Yoshkar-Ola</string>
+    <string name="text_city_w">City: </string>
     <string name="text_city_g">Degrees</string>
     <string name="text_city_p">Pressure</string>
     <string name="text_city_s">Speed weather</string>
