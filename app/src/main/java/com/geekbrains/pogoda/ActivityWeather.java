@@ -17,8 +17,7 @@ public class ActivityWeather extends AppCompatActivity  implements View.OnClickL
     private final static boolean DEBAG = true; //включение DEBAGa для логов.
 
     //---------
-    TextView city_name;
-    Button Back;
+    private TextView city_name;
     //---------
 
 
@@ -34,13 +33,13 @@ public class ActivityWeather extends AppCompatActivity  implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
-        city_name = (TextView)findViewById(R.id.textView_city);
-        Button back_activity = (Button)findViewById(R.id.buttonBack);
+        city_name = (TextView) findViewById(R.id.textView_city);
+        Button back_activity = (Button) findViewById(R.id.buttonBack);
         back_activity.setOnClickListener((View.OnClickListener) this);
 
         //-----
         String cityName = getIntent().getStringExtra("Город..");
-        city_name.setText(city_name.getText().toString()+ "" + cityName);
+        city_name.setText(city_name.getText().toString() + " " + cityName);
         //-----
 
         textView_speed_w = (TextView) findViewById(R.id.textView_speed_w);
@@ -80,4 +79,5 @@ public class ActivityWeather extends AppCompatActivity  implements View.OnClickL
         }
     }
 }
+
 

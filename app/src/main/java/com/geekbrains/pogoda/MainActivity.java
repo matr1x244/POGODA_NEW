@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
     private TextView selection;
 
     //---------
-    EditText cityName;
-    Button buttonSearch;
+    private EditText cityName;
+    private Button buttonSearch;
 //---------
 
     @Override
@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main); // запуск главного экрана
 
-        EditText cityName = (EditText) findViewById(R.id.cityName);
-        Button buttonSearch = (Button) findViewById(R.id.buttonSearch);
+        cityName = (EditText) findViewById(R.id.cityName);
+        buttonSearch = (Button) findViewById(R.id.buttonSearch);
         buttonSearch.setOnClickListener((View.OnClickListener) this);
 
         selection = (TextView) findViewById(R.id.selection);
@@ -80,12 +80,14 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.buttonSearch) {
+            Toast.makeText(this, "Поиск..", Toast.LENGTH_SHORT).show();
             Log.d(TAG, "buttonSearchSend");
             Intent search = new Intent(this, ActivityWeather.class);
             search.putExtra("Город..", cityName.getText().toString());
             startActivity(search);
         }
     }
+
     //-----
 
         // С Урока №4
