@@ -26,17 +26,13 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
 
     //---------
     private EditText cityName;
-    private Button buttonSearch;
 //---------
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main); // запуск главного экрана
-
         cityName = (EditText) findViewById(R.id.cityName);
-        buttonSearch = (Button) findViewById(R.id.buttonSearch);
-        buttonSearch.setOnClickListener((View.OnClickListener) this);
 
         selection = (TextView) findViewById(R.id.selection);
 
@@ -92,7 +88,7 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
 
         // С Урока №4
         // запуск страницы в браузере
-        //Uri addres = Uri.parse("https://гибдд12.рф");
+        //Uri addres = Uri.parse("https://pogoda.turtella.ru/weathermap");
         //Intent Web = new Intent(Intent.ACTION_VIEW, addres);
         //startActivity(Web);
         // запуск страницы в браузере

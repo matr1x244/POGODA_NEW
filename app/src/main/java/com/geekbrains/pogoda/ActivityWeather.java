@@ -2,10 +2,14 @@ package com.geekbrains.pogoda;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -33,14 +37,17 @@ public class ActivityWeather extends AppCompatActivity  implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_SECURE);
+
+        //-----
         city_name = (TextView) findViewById(R.id.textView_city);
-        Button back_activity = (Button) findViewById(R.id.buttonBack);
-        back_activity.setOnClickListener((View.OnClickListener) this);
+        //-----
 
         //-----
         String cityName = getIntent().getStringExtra("Город..");
         city_name.setText(city_name.getText().toString() + " " + cityName);
         //-----
+
 
         textView_speed_w = (TextView) findViewById(R.id.textView_speed_w);
         textView_speed_w.setText("Скорость ветра: " + String.valueOf(speed_w));
@@ -78,6 +85,29 @@ public class ActivityWeather extends AppCompatActivity  implements View.OnClickL
             }
         }
     }
+
+
+    public void btnWorld (View v) {
+        if (v.getId() == R.id.buttonWorld) {
+        Uri addres = Uri.parse("https://pogoda.turtella.ru/weathermap");
+        Intent Web = new Intent(Intent.ACTION_VIEW, addres);
+        Toast.makeText(this, "В браузер..", Toast.LENGTH_SHORT).show();
+            if (DEBAG) {
+                Log.d(TAG, "buttonWorld");
+                startActivity(Web);
+            }
+        }
+    }
 }
+//-----
+
+// С Урока №4
+// запуск страницы в браузере
+//Uri addres = Uri.parse("https://pogoda.turtella.ru/weathermap");
+//Intent Web = new Intent(Intent.ACTION_VIEW, addres);
+//startActivity(Web);
+// запуск страницы в браузере
+// С Урока №4
+//}
 
 
