@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="city">
+        <item>Йошкар-Ола</item>
+        <item>Москва</item>
+        <item>Чебоксары</item>
+        <item>Казань</item>
+        <item>Нижний Новгород</item>
+    </string-array>
+    
+    <integer-array name="city_monuments">
+        <item>@drawable/yoshkarola</item>
+        <item>@drawable/moscow</item>
+        <item>@drawable/kazan</item>
+        <item>@drawable/cheboksary</item>
+        <item>@drawable/nijniinovgorod</item>
+    </integer-array>
+</resources>
