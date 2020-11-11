@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
@@ -64,15 +65,17 @@
                 android:text="@string/text_city"
                 android:textSize="@dimen/sizetext_name" />
 
-            <Spinner
-                android:id="@+id/cities"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            <EditText
+                android:id="@+id/cityName"
+                android:layout_width="369dp"
+                android:layout_height="44dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                android:backgroundTint="#EA5E5E"
-                android:backgroundTintMode="add"
-                android:focusable="auto" />
+                android:ems="10"
+                android:hint="Название города.."
+                app:layout_constraintBottom_toTopOf="@+id/buttonSearch"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <Button
                 android:id="@+id/buttonSearch"
@@ -83,11 +86,11 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="16dp"
                 android:foregroundTint="#D54848"
-                android:onClick="buttonSearch"
+                android:onClick="onClick"
                 android:text="@string/buttonSearch"
-                android:textStyle="bold"></Button>
+                android:textStyle="bold"/>
         </LinearLayout>
     </ScrollView>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

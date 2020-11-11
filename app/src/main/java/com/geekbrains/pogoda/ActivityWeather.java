@@ -20,18 +20,19 @@ public class ActivityWeather extends AppCompatActivity  implements View.OnClickL
     private static final String TAG = "ActivityWeather"; // TAG для логов
     private final static boolean DEBAG = true; //включение DEBAGa для логов.
 
+
     //---------
     private TextView city_name;
     //---------
 
 
-    TextView textView_speed_w;
-    TextView textView_pressure_w;
-    TextView textView_degrees_w;
+    private TextView textView_speed_w;
+    private TextView textView_pressure_w;
+    private TextView textView_degrees_w;
 
-    public int speed_w = 5;
-    public int pressure_w = 0;
-    public int degrees_w = 30;
+    private int speed_w = 5;
+    private int pressure_w = 0;
+    private int degrees_w = 30;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -3,7 +3,7 @@
 
     <!--MainActivity-->
     <string name="app_name">Погода</string>
-    <string name="text_city">Введите название города</string>
+    <string name="text_city">Введите название города:</string>
     <string name="pressure">Давление</string>
     <string name="speed_weather">Скорость ветра</string>
     <string name="buttonSearch">Поиск</string>
@@ -14,5 +14,6 @@
     <string name="text_city_p">Давление</string>
     <string name="text_city_s">Скорость ветра</string>
     <string name="buttonBack">Назад</string>
+    <string name="buttonWorld">Погода в мире</string>
 
 </resources>

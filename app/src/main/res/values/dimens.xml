@@ -6,7 +6,7 @@
     <!-- margins -->
 
     <!-- Text sizes -->
-    <dimen name="sizetext_name">24sp</dimen>
+    <dimen name="sizetext_name">18sp</dimen>
     <dimen name="sizetext_speed_weather">20sp</dimen>
     <dimen name="sizetext_pressure">20sp</dimen>
     <dimen name="sizetext_city_weather">20sp</dimen>
