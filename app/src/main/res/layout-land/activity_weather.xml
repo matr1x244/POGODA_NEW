@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    tools:context=".ActivityWeather">
+
+    <TextView
+        android:id="@+id/textView_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_city_w"
+        android:textSize="@dimen/sizetext_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="80dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="346dp"
+                android:layout_height="514dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="8dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/buttonBack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.483"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_city"
+                app:layout_constraintVertical_bias="0.0">
+
+                <fragment
+                    android:id="@+id/cities_fragment"
+                    android:name="com.geekbrains.pogoda.CityFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <FrameLayout
+                    android:id="@+id/city_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/background_light">
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/textView_speed_w"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="@string/text_city_s" />
+
+                <ImageView
+                    android:id="@+id/imageView_speed_w"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/icon_speed_w" />
+
+                <TextView
+                    android:id="@+id/textView_pressure_w"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="@string/text_city_p" />
+
+                <ImageView
+                    android:id="@+id/imageView_pressure_w"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/icon_pressure_w" />
+
+                <TextView
+                    android:id="@+id/textView_degrees_w"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="@string/text_city_g" />
+
+                <ImageView
+                    android:id="@+id/imageView_degrees_w"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/icon_degrees_w" />
+
+                <Button
+                    android:id="@+id/buttonWorld"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:onClick="btnWorld"
+                    android:text="@string/buttonWorld"
+                    app:layout_constraintBottom_toTopOf="@+id/buttonBack"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.447"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="onClick"
+        android:text="@string/buttonBack"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</LinearLayout>
