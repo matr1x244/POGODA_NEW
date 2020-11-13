@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ScrollView;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,14 +26,14 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
     private TextView selection;
 
     //---------
-    private EditText cityName;
+    private SearchView cityName;
 //---------
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main); // запуск главного экрана
-        cityName = (EditText) findViewById(R.id.cityName);
+        cityName = (SearchView) findViewById(R.id.cityName);
 
         selection = (TextView) findViewById(R.id.selection);
 

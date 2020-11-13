@@ -12,8 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.google.android.gms.common.internal.Constants;
-
 public class CoatFragment extends Fragment {
 
     private final static String CITY_KEY = "CurrentCity";
@@ -46,7 +44,7 @@ public class CoatFragment extends Fragment {
          City city = getCurrentCity();
 
          if(city != null) {
-             coatCity.setImageResource(imgs.getResourceId(city.getImage_monuments() -1)); // ??
+            // coatCity.setImageResource(imgs.getResourceId(city.getImageMonuments() -1)); // ??
              cityNameView.setText(city.getCityName());
          }
         return layout;
