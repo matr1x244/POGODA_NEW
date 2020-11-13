@@ -14,8 +14,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.google.android.gms.common.internal.Constants;
-
 public class CityFragment extends Fragment {
 
     private boolean isOrintation;
@@ -91,16 +89,16 @@ public class CityFragment extends Fragment {
     private void showIsOrintation(City currentCity) {
         if (isOrintation) {
             CoatFragment detailsFragment = (CoatFragment) getFragmentManager().findFragmentById(R.id.city_info);
-            if (detailsFragment == null || currentCity.getCityName() != detailsFragment.getCurrentCity().getImage_monuments()) {
+            //if (detailsFragment == null || currentCity.getCityName() != detailsFragment.getCurrentCity().getImageMonuments()) { //??
                 CoatFragment details = CoatFragment.create(currentCity);
             }
 
             FragmentTransaction ft = getFragmentManager().beginTransaction();
-            ft.replace(R.id.city_info, detailsFragment);
+            //ft.replace(R.id.city_info, detailsFragment);
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             ft.commit();
 
-        } else {
+        //} else {
             Intent intentOrintation = new Intent();
             intentOrintation.setClass(getActivity(), CoatActivityFragment.class);
 
@@ -108,5 +106,5 @@ public class CityFragment extends Fragment {
             startActivity(intentOrintation);
         }
     }
-}
+
 

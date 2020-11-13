@@ -5,23 +5,23 @@ import android.os.Parcelable;
 
 public class City implements Parcelable {
 
-    private final int image_monuments;
-    private final String cityName;
+    private int imageMonuments;
+    private String cityName;
 
     protected City(Parcel in) {
-        image_monuments = in.readInt();
+        imageMonuments = in.readInt();
         cityName = in.readString();
     }
 
-    public City(int image_monuments, String cityName){
-        this.image_monuments = image_monuments;
+    public City(int imageMonuments, String cityName){
+        this.imageMonuments = imageMonuments;
         this.cityName = cityName;
 
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(image_monuments);
+        dest.writeInt(imageMonuments);
         dest.writeString(cityName);
 
     }
@@ -42,8 +42,8 @@ public class City implements Parcelable {
         return 0;
     }
 
-     public int getImage_monuments() {
-        return image_monuments;
+    public int getImageMonuments() {
+        return imageMonuments;
     }
 
     public String getCityName() {
