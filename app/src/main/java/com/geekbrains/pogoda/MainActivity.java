@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
             Toast.makeText(this, "Поиск..", Toast.LENGTH_SHORT).show();
             Log.d(TAG, "buttonSearchSend");
             Intent search = new Intent(this, ActivityWeather.class);
-            search.putExtra("Город..", cityName.getText().toString());
+            search.putExtra("Город..", cityName.getText().toString()); // тут ошибка ( getText() )
             startActivity(search);
         }
     }
