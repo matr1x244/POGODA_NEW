@@ -44,7 +44,7 @@ public class CoatFragment extends Fragment {
          City city = getCurrentCity();
 
          if(city != null) {
-            // coatCity.setImageResource(imgs.getResourceId(city.getImageMonuments() -1)); // ??
+            //coatCity.setImageResource(imgs.getResourceId(ity.getImageMonuments() -1)); // ??
              cityNameView.setText(city.getCityName());
          }
         return layout;
