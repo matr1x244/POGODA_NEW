@@ -33,7 +33,7 @@ public class ActivityWeather extends AppCompatActivity {
     private final static boolean DEBAG = true; //включение DEBAGa для логов.
 
     private static final String WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather?id=466806&appid=";
-    private static final String WEATHER_API_KEY = "48782d1c69f3bfe83f6c53043d67accb";
+    //private static final String WEATHER_API_KEY = "48782d1c69f3bfe83f6c53043d67accb";
 
 
     //---------
@@ -79,7 +79,7 @@ public class ActivityWeather extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             try {
-                final URL uri = new URL(WEATHER_URL + WEATHER_API_KEY);
+                final URL uri = new URL(WEATHER_URL + BuildConfig.WEATHER_API_KEY);
                 final Handler handler = new Handler(); // Запоминаем основной поток
                 new Thread(new Runnable() {
                     public void run() {
