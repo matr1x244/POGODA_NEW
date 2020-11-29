@@ -12,8 +12,10 @@
     <string name="text_city_w">Город:</string>
     <string name="text_city_g">Градусы</string>
     <string name="text_city_p">Давление</string>
+    <string name="text_city_h">Влажность</string>
     <string name="text_city_s">Скорость ветра</string>
-    <string name="buttonBack">Назад</string>
+    <string name="buttonReload">Обновить</string>
     <string name="buttonWorld">Погода в мире</string>
+    <string name="city_name_search">Название города..</string>
 
 </resources>

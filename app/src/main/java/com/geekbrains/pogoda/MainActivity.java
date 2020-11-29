@@ -3,23 +3,23 @@ package com.geekbrains.pogoda;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.ScrollView;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class MainActivity extends AppCompatActivity  implements View.OnClickListener {
+import com.google.android.material.snackbar.Snackbar;
+
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = "MainActivity"; // TAG для логов
     private final static boolean DEBAG = true; //включение DEBAGa для логов.
@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main); // запуск главного экрана
+
         cityName = (SearchView) findViewById(R.id.cityName);
 
         selection = (TextView) findViewById(R.id.selection);
@@ -55,8 +56,10 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
 
         // Получаем флажки
         CheckBox speed_weather = (CheckBox) findViewById(R.id.speed_weather);
+        Snackbar.make(view, "Скорость ветра", Snackbar.LENGTH_LONG).setAction("Скорость ветра", null).show();
         Log.d(TAG, "speed_weather");
         CheckBox pressure = (CheckBox) findViewById(R.id.pressure);
+        Snackbar.make(view, "Давление", Snackbar.LENGTH_LONG).setAction("Давление", null).show();
         Log.d(TAG, "pressure_weather");
 
         // пока что отоброжать текст -- потом удалить - пока для тестов
@@ -75,8 +78,8 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
 
     //-----
     @Override
-    public void onClick(View v) {
-        if (v.getId() == R.id.buttonSearch) {
+    public void onClick(View view) {
+        if (view.getId() == R.id.buttonSearch) {
             Toast.makeText(this, "Поиск..", Toast.LENGTH_SHORT).show();
             Log.d(TAG, "buttonSearchSend");
             Intent search = new Intent(this, ActivityWeather.class);
@@ -86,16 +89,6 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
     }
 
     //-----
-
-        // С Урока №4
-        // запуск страницы в браузере
-        //Uri addres = Uri.parse("https://pogoda.turtella.ru/weathermap");
-        //Intent Web = new Intent(Intent.ACTION_VIEW, addres);
-        //startActivity(Web);
-        // запуск страницы в браузере
-        // С Урока №4
-    //}
-
 
     // Log.d (TAG)
 
